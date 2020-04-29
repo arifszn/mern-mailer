@@ -1,0 +1,26 @@
+{
+  "name": "mern-mailer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines" : {
+    "node" : "12.2.0",
+    "npm" : "6.9.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arifszn/mern-mailer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arifszn/mern-mailer/issues"
+  },
+  "homepage": "https://github.com/arifszn/mern-mailer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
