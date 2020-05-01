@@ -26,6 +26,9 @@ app.use(passport.session());
 
 const PORT = process.env.PORT || 5000;
 
+
+authRoutes(app);
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname +'/client/build'));
 
@@ -34,6 +37,4 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     });
 }
-authRoutes(app);
-
 app.listen(PORT);
