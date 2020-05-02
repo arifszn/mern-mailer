@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+import Payments from './Payments';
 
 class Header extends Component {
     renderContent() {
@@ -10,18 +11,25 @@ class Header extends Component {
             case false:
                 return <li><a href="/auth/google">Login With Google</a></li>;
             default:
-                return <li><a href="/api/logout">Logout</a></li>;
+                return [
+                    <li key="1" className="nav-item"><Payments/></li>,
+                    <li key="2" className="nav-item"><a className="nav-link" href="/api/logout">Logout</a></li>
+                ];
         }
     }
 
     render() {
         return (
-              <nav>
-                <div className="nav-wrapper purple lighten-2">
-                    <Link to={this.props.authReducer ? '/surveys' : '/'}
-                     className="left brand-logo"
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <Link to={this.props.authReducer ? '/surveys' : '/'}
+                     className="navbar-brand"
                      >Mern Mailer</Link>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ml-auto">
                         {this.renderContent()}
                     </ul>
                 </div>
