@@ -12,7 +12,7 @@ const Payments = (props) => {
             token={token => props.handleToken(token)}
             stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
         >
-            <button className="btn btn-success">
+            <button className="btn btn-success btn-block">
                 Add Credits
             </button>
         </StripeCheckout>

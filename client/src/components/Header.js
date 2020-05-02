@@ -9,11 +9,13 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <li><a href="/auth/google">Login With Google</a></li>;
+                
+                return <li className="nav-item"><a className="nav-link" href="/auth/google"><button className="btn btn-outline-info btn-block">Login With Google</button></a></li>;
             default:
                 return [
-                    <li key="1" className="nav-item"><Payments/></li>,
-                    <li key="2" className="nav-item"><a className="nav-link" href="/api/logout">Logout</a></li>
+                    <li key="2" className="form-inline"><a className="nav-link">Credits: {this.props.authReducer.credits}</a></li>,
+                    <li key="1" className="nav-item"><a className="nav-link"><Payments/></a></li>,
+                    <li key="3" className="nav-item"><a className="nav-link" href="/api/logout"><button className="btn btn-outline-secondary btn-block">Logout</button></a></li>
                 ];
         }
     }
