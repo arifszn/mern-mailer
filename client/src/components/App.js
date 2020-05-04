@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Header from '../components/Header'
-import Landing from '../components/Landing'
+import Header from '../components/Header';
+import Landing from '../components/Landing';
+import Dashboard from '../components/Dashboard';
+import SurveyNew from '../components/SurveyNew';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index'
-
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>SurveyNew</h2>
 
 const App = (props) => {
     useEffect(() => {
@@ -14,13 +13,13 @@ const App = (props) => {
     }, []);
 
     return (
-        <div className="container">
+        <div>
             <BrowserRouter>
                 <div>
                     <Header/>
                     <Route exact path="/" component={Landing}/>
                     <Route exact path="/surveys" component={Dashboard}/>
-                    <Route path="/surveys/new" component={SurveyNew}/>
+                    <Route exact path="/surveys/new" component={SurveyNew}/>
                 </div>
             </BrowserRouter>
         </div>

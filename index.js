@@ -7,9 +7,11 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 const authRoutes = require('./routes/authRoutes');
 const billingRoutes = require('./routes/billingRoutes');
+const surveyRoutes = require('./routes/surveyRoutes');
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
@@ -34,6 +36,7 @@ const PORT = process.env.PORT || 5000;
 
 authRoutes(app);
 billingRoutes(app);
+surveyRoutes(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname +'/client/build'));
