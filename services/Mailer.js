@@ -29,11 +29,11 @@ class Mailer {
                 text: this.content, // plain text body
                 html: this.content // html body
             });
-
+            return info;
             console.log("Message sent: %s", info.messageId);
         } catch (error) {
             console.log(error);
-            
+            return false;
         }
 
         
